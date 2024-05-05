@@ -1,0 +1,211 @@
+
+import math
+
+# Problem 1
+def calculate_total_and_average():
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    num3 = float(input("Enter the third number: "))
+    
+    total = num1 + num2 + num3
+    average = total / 3
+    
+    print("1. Total: {0}, Average: {1}".format(total, average))
+
+# Problem 2
+def calculate_tip_and_total():
+    meal_price = float(input("Enter the price of the meal: "))
+    tip_percent = float(input("Enter the tip percentage: "))
+    
+    tip_amount = meal_price * (tip_percent / 100)
+    total_bill = meal_price + tip_amount
+    
+    print("2. Tip amount: %d, Total bill with tip: %d" % (tip_amount, total_bill))
+
+# Problem 3
+def cm_to_inches():
+    length_cm = float(input("Enter a length in centimeters: "))
+    
+    if length_cm < 0:
+        print("Invalid entry.")
+    else:
+        length_inches = length_cm / 2.54
+        print("3. Length in inches: {0}".format(length_inches))
+
+# Problem 4
+def calculate_volume(radius, length):
+    area = radius * radius * math.pi
+    volume = area * length
+    return area, volume
+
+# Problem 5
+def feet_to_meters():
+    feet = float(input("Enter a length in feet: "))
+    meters = feet * 0.305
+    print("5. Length in meters: %d" % meters)
+
+# Problem 6
+def pounds_to_kg():
+    pounds = float(input("Enter a weight in pounds: "))
+    kilograms = pounds * 0.454
+    print("6. Weight in kilograms: {}".format(kilograms))
+
+# Problem 9
+def check_password():
+    correct_password = "password"
+    attempts = 5
+
+    while attempts > 0:
+        password = input("Enter the password: ")
+        if password == correct_password:
+            print("9. You are logged in to the system.")
+            break
+        else:
+            attempts -= 1
+            if attempts == 0:
+                print("9. You are kicked off the system.")
+            else:
+                print("9. Incorrect password. {} attempts remaining.".format(attempts))
+
+# Problem 10
+def kg_to_pounds():
+    while True:
+        weight_kg = float(input("Enter a weight in kilograms: "))
+        if weight_kg >= 0:
+            break
+        else:
+            print("Invalid entry. Please enter a non-negative weight.")
+
+    weight_pounds = weight_kg * 2.20462
+    print("10. Weight in pounds: {}".format(weight_pounds))
+
+# Problem 11
+def calculate_average_grade():
+    grades = []
+    for i in range(5):
+        grade = float(input("Enter grade for subject {}: ".format(i+1)))
+        grades.append(grade)
+    
+    average_grade = sum(grades) / len(grades)
+    print("11. Average grade: {}".format(average_grade))
+
+# Problem 12
+def peso_to_dollar():
+    peso = int(input("Enter amount in peso: "))
+    dollar = peso / 50  # Assuming 1 dollar = 50 pesos
+    print("12. Amount in dollar: {}".format(dollar))
+
+# Problem 13
+def calculate_payroll():
+    name = input("Employee’s name: ")
+    hours_worked = float(input("Number of hours worked in a week: "))
+    hourly_pay_rate = float(input("Hourly pay rate: "))
+    gross_pay = hours_worked * hourly_pay_rate
+    deductions = float(input("Deductions: "))
+    net_pay = gross_pay - deductions
+
+    print("13. Payroll:")
+    print("Employee’s name:", name)
+    print("Number of hours worked in a week:", hours_worked)
+    print("Hourly pay rate:", hourly_pay_rate)
+    print("Gross Pay:", gross_pay)
+    print("Deductions:", deductions)
+    print("Net Pay:", net_pay)
+
+# Problem 14
+def reverse_string():
+    string = input("Enter a string: ")
+    reversed_string = string[::-1]
+    print("14. Reversed string:", reversed_string)
+
+# Problem 15
+def print_even_numbers():
+    L = [4, 78, 23, 66, 23, 89, 56, 21, 2]
+    even_numbers = [num for num in L if num % 2 == 0]
+    print("15. Even numbers:", even_numbers)
+
+# Problem 16
+def is_palindrome(string):
+    return string == string[::-1]
+
+# Problem 17
+def find_largest_item():
+    x = [4, 6, 8, 24, 12, 2]
+    largest_item = max(x)
+    print("17. Largest item:", largest_item)
+
+# Problem 18
+def is_even(number):
+    return number % 2 == 0
+
+# Problem 19
+def sum_numbers(low, high):
+    return sum(range(low, high+1))
+
+# Problem 20
+def f_1(number):
+    return number + 5
+
+def f_2(number):
+    return f_1(number) * 2
+
+# Problem 21
+def sum_all_numbers(numbers):
+    return sum(numbers)
+
+# Problem 22
+def multiply_all_numbers(numbers):
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
+
+# Problem 23
+def hotel_cost(nights):
+    return 140 * nights
+
+# Problem 24
+def plane_ride_cost(country):
+    prices = {
+        "Japan": 18300,
+        "South Korea": 22000,
+        "Canada": 22200,
+        "Los Angeles": 47500
+    }
+    return prices.get(country, "Invalid country")
+
+# Problem 25
+def shut_down(s):
+    if s == "yes":
+        return "Shutting down"
+    elif s == "no":
+        return "Shutdown aborted"
+    else:
+        return "Sorry"
+
+# Problem 26
+def create_square_list():
+    return [x**2 for x in range(1, 31)]
+
+# Call each function to solve the problems
+calculate_total_and_average()
+calculate_tip_and_total()
+cm_to_inches()
+radius = float(input("Enter the radius of the cylinder: "))
+length = float(input("Enter the length of the cylinder: "))
+area, volume = calculate_volume(radius, length)
+print("4. Area: {}, Volume: {}".format(area, volume))
+feet_to_meters()
+pounds_to_kg()
+check_password()
+kg_to_pounds()
+calculate_average_grade()
+peso_to_dollar()
+calculate_payroll()
+reverse_string()
+print_even_numbers()
+print("16. Is 'madam' a palindrome:", is_palindrome("madam"))
+find_largest_item()
+print("18. Is 10 even?", is_even(10))
+print("19. Sum of numbers from 1 to 10:", sum_numbers(1, 10))
+print("20. f_1(5):", f_1
